@@ -23,7 +23,7 @@ jobs:
             - test-release: "curl -sL https://git.io/goreleaser | bash -s -- --snapshot"
             - pre-teardown-cleanup: echo "pre-teardown-cleanup step"
             - teardown-cleanup: echo "Teardown clean up"
-            - post-teardown-cleanup: echo "post-teardown clean up step"
+            - teardown-cleanup: echo "post-teardown clean up step"
             
 
     publish:
