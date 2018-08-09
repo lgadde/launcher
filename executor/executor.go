@@ -320,6 +320,7 @@ func Run(path string, env []string, emitter screwdriver.Emitter, build screwdriv
 	teardownCommands := append(userTeardownCommands, sdTeardownCommands...)
 
 	for index, cmd := range teardownCommands {
+		fmt.Fprintf(emitter, "$ %s\n", cmd)
 		if index == 0 && firstError == nil {
 			// Exit shell only if previous user steps ran successfully
 			f.Write([]byte{4})
