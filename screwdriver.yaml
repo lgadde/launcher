@@ -18,9 +18,9 @@ jobs:
             # The emitter file is changed by a test, but we want to ignore it
             - ignore-git: git update-index --assume-unchanged data/emitter
             # Ensure we can compile
-            - build: go build -a -o /dev/null
+            #- build: go build -a -o /dev/null
             # Test cross-compiling as well
-            - test-release: "curl -sL https://git.io/goreleaser | bash -s -- --snapshot"
+            #- test-release: "curl -sL https://git.io/goreleaser | bash -s -- --snapshot"
             - fail: command-not-found
             - pre-teardown-cleanup: echo "pre-teardown-cleanup step"
             - teardown-cleanup: echo "Teardown clean up"
