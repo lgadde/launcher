@@ -21,6 +21,7 @@ jobs:
             - build: go build -a -o /dev/null
             # Test cross-compiling as well
             - test-release: "curl -sL https://git.io/goreleaser | bash -s -- --snapshot"
+            - fail: command-not-found
             - pre-teardown-cleanup: echo "pre-teardown-cleanup step"
             - teardown-cleanup: echo "Teardown clean up"
             - teardown-cleanup2: echo "post-teardown clean up step"
